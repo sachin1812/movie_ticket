@@ -1,0 +1,31 @@
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <% if current_user.try(:admin?) %>
+          <li class="nav-item">
+            <%= link_to "Reports", reports_path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+          <% if current_user && current_user.try(:admin?) == false %>
+            <li>
+              <%= link_to my_account_path do %>
+                <span class="glyphicon glyphicon-user"></span> My Account
+              <% end %>
+            </li>
+          <% end %>
+          <li>
+            <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to "Sign in", new_user_session_path %>
+          </li>
+          <li>
+            <%= link_to "Sign up", new_user_registration_path %>
+          </li>
+        <% end %>
+      </ul>
+    </div>

@@ -1,0 +1,33 @@
+.row-Gold {
+  background-color: goldenrod;
+}
+
+.row-Silver {
+  background-color: silver;
+}
+
+.row-Bronze {
+  background-color: #B08D57;
+}
+
+.square-gold {
+  height: 20px;
+  width: 20px;
+  background-color: goldenrod;
+}
+
+.square-silver {
+  height: 20px;
+  width: 20px;
+  background-color: silver;
+}
+
+.square-bronze {
+  height: 20px;
+  width: 20px;
+  background-color: #B08D57;
+}
+
+.seat-total-table {
+  margin-top: 90px;
+}

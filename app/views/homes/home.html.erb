@@ -1,0 +1,27 @@
+<% if current_user.user?%>
+<head>
+  <title>Movie Booking</title>
+</head>
+<body>
+
+<div class="container movie-cards" style="margin-top:20px">
+  <div class="row">
+    <% @movies.each do |movie| %>
+      <div class="col-sm-3">
+        <div class="panel panel-primary">
+          <div class="panel-heading"><%= movie.title %></div>
+          <div class="panel-body">Duration:- <%= movie.duration %></div>
+          <div class="panel-footer"><%= link_to "Book now", initiate_booking_url(id: movie.id) %></div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div><br>
+</body>
+<% else %>
+<div class="container movie-cards" style="margin-top:20px">
+  <div class="row">
+    <h1>Welcome Admin</h1>
+  </div>
+</div>
+<%end%>

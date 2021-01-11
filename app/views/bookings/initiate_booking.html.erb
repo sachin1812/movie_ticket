@@ -1,0 +1,15 @@
+<div class="row container">
+  <div class="col-sm-8 ticket-grid-form">
+    <%= form_tag process_booking_path do %>
+      <center><h2>Screen this side</h2></center>
+      <%= render "price_with_color" %>
+      <%= render "seat_grid_layout", seat_template: @seat_plan %>
+      <%= hidden_field_tag "screening_details_id", @screening_detail.id %>
+      <%= hidden_field_tag "ticket_total"%>
+      <%= submit_tag "Confirm", id: 'book-ticket' %>
+    <% end %>
+  </div>
+  <div class="col-sm-4 ticket-booking-amount">
+    <%= render "seat_total" %>
+  </div>
+</div>

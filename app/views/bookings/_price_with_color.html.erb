@@ -1,0 +1,8 @@
+<div class="row">
+<% @seat_plan.uniq {|e| e[:seat_type] }.each do |sp| %>
+  <div class="col-sm-3">
+    <div class=<%= "square-#{sp[:seat_type].downcase}" %>></div>
+    <div><%= "#{sp[:seat_type]}-#{sp[:price].to_i}/-" %></div>
+  </div>
+<% end %>
+</div>

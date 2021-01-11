@@ -1,0 +1,24 @@
+<div class="container">
+  <%= link_to "Add movie", new_movie_path, class: "btn btn-info float-right", role: "button" %>
+</div>
+<br><br>
+<div class="container">
+  <table class="table">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Duration</th>
+    </tr>
+
+    <% @movies.each do |movie| %>
+      <tr>
+        <td> <%= movie.id %> </td>
+        <td> <%= movie.title %> </td>
+        <td> <%= movie.duration %> </td>
+        <td> <%= link_to "Details", movie_path(movie.id) %> </td>
+        <td> <%= link_to "Edit", edit_movie_path(movie.id) %> </td>
+        <td> <%= link_to "Remove", movie_path(movie.id), method: :delete %> </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

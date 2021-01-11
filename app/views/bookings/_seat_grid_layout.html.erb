@@ -1,0 +1,29 @@
+<table class="table table-sm ticket-booking-grid-table">
+  <tr>
+    <th></th>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>4</th>
+    <th>5</th>
+    <th>6</th>
+    <th>7</th>
+    <th>8</th>
+    <th>9</th>
+    <th>10<th>
+  </tr>
+  <% @seat_plan.each do |sp| %>
+  <div id="calculator">
+      <tr class=<%= "row-#{sp[:seat_type]}" %>>
+        <th><%= sp[:row] %></th>
+        <% sp[:number].each do | seat_number |%>
+            <% if @booked_seats.include? "#{sp[:row]}_#{seat_number}" %>
+              <td> <span class="glyphicon glyphicon-ok"></span> </td>
+            <% else %>
+              <td> <%= check_box_tag("seat[#{sp[:row]}_#{seat_number}]", 'yes', false, class: "#{sp[:seat_type]} seat-booking-grid", data: "#{sp[:price]}")  %> </td>
+            <% end %>
+        <% end %>
+      </tr>
+    </div>
+  <% end %>
+</table>

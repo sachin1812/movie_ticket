@@ -1,0 +1,15 @@
+<%= form_tag reports_path do %>
+  <div class="form-group">
+    <%= label_tag "Date" %>
+    <%= date_field_tag "filter_date", (@date || Date.today) %>
+  </div>
+  <div class="form-group">
+    <%#= label_tag "Start time" %>
+    <%#= select_tag "filter_start_time", options_for_select(TIME, (@start_time || 0)) %>
+    <%#= label_tag "End time" %>
+    <%#= select_tag "filter_end_time", options_for_select(TIME, (@end_time || 0)) %>
+  </div>
+  <div class="form-group">
+    <%= submit_tag "Generate report" %>
+  </div>
+<% end %>

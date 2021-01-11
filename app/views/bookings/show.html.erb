@@ -1,0 +1,41 @@
+<div class="jumbotron ticket-receipt">
+  <h2>Booking Details</h2>
+  <table class="table">
+    <tr>
+      <h4>
+        <td>Movie name</td>
+        <td><%= @movie.title %></td>
+      </h4>
+    </tr>
+    <tr>
+      <h4>
+        <td>Screen name</td>
+        <td><%= @screen_name %></td>
+      </h4>
+    </tr>
+    <tr>
+      <h4>
+        <td>Date</td>
+        <td><%= @date %></td>
+      </h4>
+    </tr>
+    <tr>
+      <h4>
+        <td>Time</td>
+        <td><%= @time %></td>
+      </h4>
+    </tr>
+    <tr>
+      <h4>
+        <td>Seat Numbers</td>
+        <td><%= @seat_numbers %></td>
+      </h4>
+    </tr>
+    <tr>
+      <h4>
+        <td>Total Amount</td>
+        <td><%= "#{@price}/- Rs" %></td>
+      </h4>
+    </tr>
+  </table>
+</div>

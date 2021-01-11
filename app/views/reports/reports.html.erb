@@ -1,0 +1,28 @@
+<div class="container">
+  <h3>Screening Details</h3>
+  <br />
+  <%= render "filter" %>
+</div>
+<br /><br />
+<div class="container">
+  <table class="table">
+    <tr>
+      <th>Movie name</th>
+      <th>Screen name</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Booked seats</th>
+      <th>Booked count</th>
+    </tr>
+    <% @screening_details&.each do | screening_detail | %>
+      <tr>
+        <td> <%= screening_detail.movie.title %> </td>
+        <td> <%= screening_detail.screen.name %> </td>
+        <td> <%= screening_detail.screening_date %> </td>
+        <td> <%= screening_detail.slot.start_end_time %> </td>
+        <td> <%= screening_detail.bookings.pluck(:seat_number).flatten.sort.join(', ') %> </td>
+        <td> <%= screening_detail.bookings.pluck(:seat_number).flatten.count %> </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

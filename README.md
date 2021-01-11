@@ -1,8 +1,9 @@
 # README
 
 # Movie Ticket
-#NOTE: Please reload the initiate_booking page once before selecting seat
-for pricing js to work.
+
+#NOTE: Please reload the initiate_booking page once before selecting seat for pricing js to work.
+
 ```
 URL: http://localhost:3000/initiate_booking?id=1
 ```
